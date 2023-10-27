@@ -7,6 +7,9 @@ class Counter {
     int value;
   // 행위
   public:
+    Counter() : value{0} {};  // 생성자
+    ~Counter() { } // 소멸자: 매개변수 없음
+      
     void reset() {
       value = 0;
     }
