@@ -16,7 +16,8 @@ public:
     }
   };
   VecF(const VecF& rhs) : n{ rhs.n } {
-    arr = new float[n];
+    // arr = rhs.arr; // 이렇게 하면 얕은 복사가 됨
+    arr = new float[n]; // 깊은 복사를 위해 메모리를 새로 할당
     memcpy(arr, rhs.arr, n*sizeof(float));
   };
   ~VecF() {
